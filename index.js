@@ -7,8 +7,12 @@ var subDomain = require('express-subdomain')
 var exphbs = require('express-handlebars')
 var mysql = require('mysql')
 var config = require('./config.json')
+// var CryptoJS = require('crypto-js')
+var SHA256 = require("crypto-js/sha256")
 var app = express()
 var port = 3000
+// debug
+var author = "Lucas"
 
 var con = mysql.createConnection({
     host: config.database.host,
@@ -17,10 +21,10 @@ var con = mysql.createConnection({
     port: config.database.port,
     password: config.database.password
 })
-con.connect(function (err) {
+/*con.connect(function (err) {
     if (err) throw err
     console.log("Database work!")
-})
+})*/
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'
 }))
@@ -34,13 +38,18 @@ app.get('/', (req, res) => {
         res.render('page', {
             subdomain: subdomain[0]
         })
-
         /*var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
         con.query(sql, function (err, result) {
             if (err) throw err;
             console.log("1 record inserted");
-        });*/
-
+        })*/
+        /*con.connect(function (err) {
+            if (err) throw err
+            con.query("SELECT * FROM community WHERE communityName = %s", subdomain[0], function (err, result, fields) {
+                if (err) throw err
+                console.log(fields)
+            })
+        })*/
         return 0
     }
     res.render('home')
@@ -54,15 +63,7 @@ app.get('/register', (req, res) => {
 app.get('*', function (req, res) {
     res.redirect('/')
 })
-
-function lol() {
-    Date.now = function now() {
-        console.log(new Date().getTime())
-    }
-}
-
-lol()
-
 app.listen(port, () => {
     console.log('localhost:%s', port)
 })
+con.end()

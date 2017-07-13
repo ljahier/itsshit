@@ -8,11 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ljahier/itsshit.git"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
     "express-subdomain": "^1.0.5",
