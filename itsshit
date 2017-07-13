@@ -1,0 +1,5 @@
+deux tables:
+    une qui contient le nom des comunautées,
+    une seconde qui contient les posts
+il faut faire un lien entre les deux
+si la comunauté n'existe pas, on la crée dans la base.
