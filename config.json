@@ -1,5 +1,5 @@
 {
-    database: {
+    "database": {
         "host": "bti0ejtvd-mysql.services.clever-cloud.com",
         "database": "bti0ejtvd",
         "user": "ukrmzqnyyugoro8i",
