@@ -20,6 +20,6 @@ It's Shit! allow you to say how shitty our world is! Your school is shitty? Just
   
   Integration of images and videos is also an idea for future improvement.
   
-  project developed in nodejs with express, express-handlebars, express-subdomain and mysql. You can upgrade and use postegreSQL
+  project developed in nodejs with express, express-handlebars, express-subdomain and mysql. You can upgrade and use postegreSQL.
   
   It's an idea of [Gauthier POGAM--LE MONTAGNER](https://github.com/Kendos-Kenlen)
