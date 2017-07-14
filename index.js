@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
     let mydomain = req.hostname
     let subdomain = mydomain.split('.')
-    if (subdomain.length >= 2) {
+    if (subdomain.length >= 3) {
         res.redirect('http://' + subdomain[1] + ':' + port)
     } else {
         res.redirect('/')
