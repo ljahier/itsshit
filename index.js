@@ -55,7 +55,7 @@ app.post('/post', (req, res) => {
     let mydomain = req.hostname
     let subdomain = mydomain.split('.')
     // console.log()
-    res.redirect('http://' + req.body.search + '.' + mydomain + ':' + port)
+    res.redirect('http://' + req.body.search + '.' + mydomain)
 })
 app.listen(port, () => {
     console.log('localhost:%s', port)
