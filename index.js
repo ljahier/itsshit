@@ -10,7 +10,7 @@ var SHA256 = require("crypto-js/sha256")
 var database = require('./database.js')
 var bodyParser = require("body-parser");
 var app = express()
-var port = 3000
+var port = 8080
 
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'
@@ -37,7 +37,10 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
     let mydomain = req.hostname
     let subdomain = mydomain.split('.')
-    res.redirect('http://localhost:' + port)
+    if (subdomain.length >= 2) {
+        res.redirect('http://' + subdomain[1] + ':' + port)
+    }
+    res.redirect('/')
 })
 app.get('/login', (req, res) => {
     res.render('login')
