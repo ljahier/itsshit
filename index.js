@@ -7,12 +7,9 @@ var subDomain = require('express-subdomain')
 var exphbs = require('express-handlebars')
 var mysql = require('mysql')
 var config = require('./config.json')
-// var CryptoJS = require('crypto-js')
 var SHA256 = require("crypto-js/sha256")
 var app = express()
 var port = 3000
-// debug
-var author = "Lucas"
 
 var con = mysql.createConnection({
     host: config.database.host,
@@ -43,13 +40,13 @@ app.get('/', (req, res) => {
             if (err) throw err;
             console.log("1 record inserted");
         })*/
-        /*con.connect(function (err) {
+        con.connect(function (err) {
             if (err) throw err
-            con.query("SELECT * FROM community WHERE communityName = %s", subdomain[0], function (err, result, fields) {
+            con.query('SELECT * FROM community WHERE communityName = subdomain[0]', function (err, result) {
                 if (err) throw err
-                console.log(fields)
+                console.log(result)
             })
-        })*/
+        })
         return 0
     }
     res.render('home')
