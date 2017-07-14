@@ -8,6 +8,7 @@ var exphbs = require('express-handlebars')
 var mysql = require('mysql')
 var config = require('./config.json')
 var SHA256 = require("crypto-js/sha256")
+var database = require('./database.js')
 var app = express()
 var port = 3000
 
@@ -35,21 +36,15 @@ app.get('/', (req, res) => {
         res.render('page', {
             subdomain: subdomain[0]
         })
-        /*var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
-        con.query(sql, function (err, result) {
-            if (err) throw err;
-            console.log("1 record inserted");
-        })*/
-        con.connect(function (err) {
-            if (err) throw err
-            con.query('SELECT * FROM community WHERE communityName = subdomain[0]', function (err, result) {
-                if (err) throw err
-                console.log(result)
-            })
-        })
+        database.insertInto(subdomain[0])
         return 0
     }
     res.render('home')
+})
+app.get('/home', (req, res) => {
+    let mydomain = req.hostname
+    let subdomain = mydomain.split('.')
+    res.redirect('http://localhost:3000')
 })
 app.get('/login', (req, res) => {
     res.render('login')
