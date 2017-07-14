@@ -39,8 +39,9 @@ app.get('/home', (req, res) => {
     let subdomain = mydomain.split('.')
     if (subdomain.length >= 2) {
         res.redirect('http://' + subdomain[1] + ':' + port)
+    } else {
+        res.redirect('/')
     }
-    res.redirect('/')
 })
 app.get('/login', (req, res) => {
     res.render('login')
@@ -55,7 +56,7 @@ app.post('/post', (req, res) => {
     let mydomain = req.hostname
     let subdomain = mydomain.split('.')
     // console.log()
-    res.redirect('http://' + req.body.search + '.' + mydomain)
+    res.redirect('http://' + req.body.search + '.' + mydomain + ':' + port) 
 })
 app.listen(port, () => {
     console.log('localhost:%s', port)
