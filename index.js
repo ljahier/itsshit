@@ -28,8 +28,8 @@ app.get('/', (req, res) => {
         res.render('page', {
             subdomain: subdomain[0]
         })
-        /*database.insertInto(subdomain[0])
-        database.selectFromCommunity()*/
+        console.log('Debug APP.GET `/` : ' + database.selectFromCommunity(subdomain[0]))
+        console.log()
         return 0
     }
     res.render('home')
@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
     let mydomain = req.hostname
     let subdomain = mydomain.split('.')
-    if (subdomain.length >= 3) {
+    if (subdomain.length >= 2) { // For prod change the length 2 are 3
         res.redirect('http://' + subdomain[1] + ':' + port)
     } else {
         res.redirect('/')
@@ -56,7 +56,7 @@ app.post('/post', (req, res) => {
     let mydomain = req.hostname
     let subdomain = mydomain.split('.')
     // console.log()
-    res.redirect('http://' + req.body.search + '.' + mydomain + ':' + port) 
+    res.redirect('http://' + req.body.search + '.' + mydomain + ':' + port)
 })
 app.listen(port, () => {
     console.log('localhost:%s', port)
