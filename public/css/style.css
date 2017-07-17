@@ -1,6 +1,4 @@
 page-footer {
-    flex: 1 0 auto;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }

@@ -5,5 +5,8 @@
         "user": "ukrmzqnyyugoro8i",
         "port": "3306",
         "password": "PU6XowBx7Cr7IGKWC4W9"
+    },
+    "message": {
+        "notInDatabase": "This school/community is not in database, you want to create it ?"
     }
 }

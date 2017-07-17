@@ -5,13 +5,31 @@
 var express = require('express')
 var subDomain = require('express-subdomain')
 var exphbs = require('express-handlebars')
+var mysql = require('mysql')
 var config = require('./config.json')
 var SHA256 = require("crypto-js/sha256")
-var database = require('./database.js')
+// var database = require('./database.js')
 var bodyParser = require("body-parser");
 var app = express()
 var port = 8080
 
+var connection = mysql.createConnection({
+    host: config.database.host,
+    database: config.database.database,
+    user: config.database.user,
+    port: config.database.port,
+    password: config.database.password
+})
+connection.connect(function (err) {
+    if (!err) {
+        console.log('Database is connected !')
+    } else {
+        console.log('Error connecting database, : %s', err) 
+    }
+})
+connection.end(()=>{
+    console.log('End connection at database')
+})
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'
 }))
@@ -28,8 +46,7 @@ app.get('/', (req, res) => {
         res.render('page', {
             subdomain: subdomain[0]
         })
-        console.log('Debug APP.GET `/` : ' + database.selectFromCommunity(subdomain[0]))
-        console.log()
+        // console.log('Debug APP.GET `/` : ' + database.selectFromCommunity(subdomain[0]))
         return 0
     }
     res.render('home')
