@@ -24,10 +24,10 @@ connection.connect(function (err) {
     if (!err) {
         console.log('Database is connected !')
     } else {
-        console.log('Error connecting database, : %s', err) 
+        console.log('Error connecting database, : %s', err)
     }
 })
-connection.end(()=>{
+connection.end(() => {
     console.log('End connection at database')
 })
 app.engine('handlebars', exphbs({
@@ -54,6 +54,7 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
     let mydomain = req.hostname
     let subdomain = mydomain.split('.')
+
     if (subdomain.length >= 2) { // For prod change the length 2 are 3
         res.redirect('http://' + subdomain[1] + ':' + port)
     } else {
