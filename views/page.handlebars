@@ -4,6 +4,9 @@
             <li><a href="/home">Accueil</a></li>
             <li class="active"><a href="#">{{ subdomain }}</a></li>
         </ul>
+        <ul class="right">
+            <li><a href="#">{{username}}</a></li>
+        </ul>
     </div>
 </nav>
 
@@ -12,6 +15,7 @@
     if ('{{messageNotInDb}}'.length >= 0) {
         document.getElementById('messageNotInDb').style.display = 'none'
     }
+
 </script>
 <h4 class="truncate" id="messageNotInDb">{{ messageNotInDb }}</h4>
 

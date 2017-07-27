@@ -1,2 +1,27 @@
-Welcom to login
-you can go home <a href="/">here</a>!
+<nav>
+    <div class="nav-wrapper">
+        <ul id="nav" class="brand-logo">
+            <li><a href="/home">Home</a></li>
+            <li class="active"><a href="/register">Sign in</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="row">
+    <pre id="error">
+           {{error}}
+       </pre>
+    <form class="col s12" action="#" method="post">
+        <h2>Sign in</h2>
+        <div class="input-field col s12">
+            <input id="username" name="username" type="text" class="validate" required autofocus>
+            <label for="username" data-error="wrong" data-success="right">Username</label>
+        </div>
+        <div class="input-field col s12">
+            <input id="email" name="password" type="password" class="validate" required>
+            <label for="email" data-error="wrong" data-success="right">Password</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Connect
+            </button>
+    </form>
+</div>

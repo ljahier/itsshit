@@ -14,11 +14,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "crypto-js": "^3.1.9-1",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.4",
     "express-subdomain": "^1.0.5",
     "mysql": "^2.13.0",
+    "sha256": "^0.2.0",
     "socket.io": "^2.0.3"
   }
 }
