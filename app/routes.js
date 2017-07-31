@@ -44,20 +44,7 @@ module.exports = function (app, mysql, config, subDomain, exphbs, sha256, bodyPa
     app.post('/sign-in', (req, res) => {
         let username = req.body.username
         let passwd = sha256(req.body.password)
-        connection.connect(() => {
-            console.log('Database connected')
-        })
-        let sql = connection.query('SELECT * FROM users WHERE username = \'' + username + '\', password = \'' + passwd + '\'')
-        sql.on('result', function (row) {
-            if (username != row.username || passwd != row.password) {
-                res.render('login', {
-                    error: "Username or password don't match !"
-                })
-                return
-            }
-        })
-        connection.end()
-        res.redirect('/')
+        require('./login.js')(mysql, config, username, passwd)
     })
     app.get('/logout', function (req, res) {
         req.session.destroy()
