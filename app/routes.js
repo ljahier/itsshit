@@ -3,7 +3,7 @@ module.exports = function (app, mysql, config, subDomain, exphbs, sha256, bodyPa
         let mydomain = req.hostname
         let subdomain = mydomain.split('.')
 
-        if (subdomain.length === 2) {
+        if (subdomain.length === 3) {
             res.render('page', {
                 subdomain: subdomain[0]
             })
