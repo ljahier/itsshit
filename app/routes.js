@@ -55,7 +55,7 @@ module.exports = function (app, mysql, config, subDomain, exphbs, sha256, bodyPa
         let mydomain = req.hostname
         let subdomain = mydomain.split('.')
         // console.log()
-        res.redirect('http://' + req.body.search + '.' + mydomain + ':' + port)
+        res.redirect('http://' + req.body.search + '.' + mydomain)
     })
     app.get('*', function (req, res) {
         res.redirect('/')
