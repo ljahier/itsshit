@@ -15,7 +15,11 @@ module.exports = function (app, mysql, config, subDomain, exphbs, sha256, bodyPa
         let mydomain = req.hostname
         let subdomain = mydomain.split('.')
 
-        res.redirect('/')
+        if (subdomain.length >= 3) { // For prod change the length 2 are 3
+            res.redirect('http://' + subdomain[1] + ':' + port)
+        } else {
+            res.redirect('/')
+        }
     })
     app.get('/sign-in', (req, res) => {
         res.render('login')
