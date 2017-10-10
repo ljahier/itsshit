@@ -14,14 +14,14 @@ module.exports = function (mysql, config, username, passwd) {
         if (username != row.username || passwd != row.password) {
             console.log('error')
             /*res.render('login', {
-    error: "Username or password don't match !"
-})*/
+            error: "Username or password don't match !"
+            })*/
             return
         } else {
             console.log('GOOD !!!!!! your now connected !')
             /*res.redirect('/')*/
         }
-        console.log('zizi')
+        console.log('works')
     })
     connection.end()
 }
