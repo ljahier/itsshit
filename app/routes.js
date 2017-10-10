@@ -1,4 +1,4 @@
-module.exports = function (app, mysql, config, subDomain, exphbs, sha256, bodyParser, port) {
+module.exports = function (app, mysql, subDomain, exphbs, sha256, bodyParser, port) {
     app.get('/', (req, res) => {
         let mydomain = req.hostname
         let subdomain = mydomain.split('.')
@@ -37,14 +37,14 @@ module.exports = function (app, mysql, config, subDomain, exphbs, sha256, bodyPa
             })
             return
         }
-        require('./register.js')(mysql, config, username, passwd)
+        require('./register.js')(mysql, username, passwd)
         res.redirect('/home')
         console.log('GOOD !')
     })
     app.post('/sign-in', (req, res) => {
         let username = req.body.username
         let passwd = sha256(req.body.password)
-        require('./login.js')(mysql, config, username, passwd)
+        require('./login.js')(mysql, username, passwd)
     })
     app.get('/logout', function (req, res) {
         req.session.destroy()

@@ -1,10 +1,10 @@
-module.exports = function (mysql, config, username, passwd) {
+module.exports = function (mysql, username, passwd) {
     var connection = mysql.createConnection({
-        host: config.database.host,
-        database: config.database.database,
-        user: config.database.user,
-        port: config.database.port,
-        password: config.database.password
+        host: process.env.MYSQL_ADDON_HOST,
+        database: process.env.MYSQL_ADDON_DB,
+        user: process.env.MYSQL_ADDON_USER,
+        port: process.env.MYSQL_ADDON_PORT,
+        password: process.env.MYSQL_ADDON_PASSWORD
     })
     connection.connect(() => {
         console.log('Database connected')
