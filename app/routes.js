@@ -15,7 +15,7 @@ module.exports = function (app, mysql, config, subDomain, exphbs, sha256, bodyPa
         let mydomain = req.hostname
         let subdomain = mydomain.split('.')
 
-        if (subdomain.length >= 2) { // For prod change the length 2 are 3
+        if (subdomain.length >= 3) { // For prod change the length 2 are 3
             res.redirect('http://' + subdomain[1] + ':' + port)
         } else {
             res.redirect('/')
