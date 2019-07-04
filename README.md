@@ -22,4 +22,4 @@ It's Shit! allow you to say how shitty our world is! Your school is shitty? Just
   
   project developed in nodejs with express, express-handlebars, express-subdomain and mysql. You can upgrade and use postegreSQL.
   
-  It's an idea of [Gauthier POGAM--LE MONTAGNER](https://github.com/Kendos-Kenlen)
+  **A [Gauthier POGAM--LE MONTAGNER](https://github.com/GauthierPLM) ORIGINAL IDEA**
