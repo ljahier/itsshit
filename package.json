@@ -1,6 +1,6 @@
 {
   "name": "itsshit",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -13,13 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "express-handlebars": "^3.0.0",
-    "express-session": "^1.15.4",
-    "express-subdomain": "^1.0.5",
-    "mysql": "^2.13.0",
-    "sha256": "^0.2.0",
-    "socket.io": "^2.0.3"
+    "sha256": "^0.2.0"
   }
 }

@@ -1,31 +1,38 @@
-<nav>
-    <div class="nav-wrapper">
-        <ul id="nav" class="brand-logo">
-            <li><a href="/home">Home</a></li>
-            <li class="active"><a href="/sign-up">Sign up</a></li>
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li class="uk-parent"><a href="/">Accueil</a></li>
+        </ul>
+    </div>
+
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            <li class="uk-parent"><a href="/login">Login</a></li>
+            <li class="uk-active"><a href="/register">Register</a></li>
         </ul>
     </div>
 </nav>
 
-<div class="row">
-    <pre id="error">
-           {{error}}
-       </pre>
-    <form class="col s12" action="#" method="post">
-        <h2>Sign up</h2>
-        <div class="input-field col s12">
-            <input id="username" name="username" type="text" class="validate" required autofocus>
-            <label for="username" data-error="wrong" data-success="right">Username</label>
+<div>
+    <div class="uk-heading-small">
+        <h1>Welcome to it's shit !</h1>
+    </div>
+    
+    <form action="/user" method="POST">
+        <div class="uk-margin">
+            <input type="text" class="uk-input" name="email" placeholder="Enter your mail adress">
         </div>
-        <div class="input-field col s12">
-            <input id="password" name="password" type="password" class="validate" required>
-            <label for="password" data-error="wrong" data-success="right">Password</label>
+
+        <div class="uk-margin">
+            <input type="password" class="uk-input" name="password" placeholder="Enter your password">
         </div>
-        <div class="input-field col s12">
-            <input id="passwordCnfrm" name="passwordConfirmation" type="password" class="validate" required>
-            <label for="passwordCnfrm" data-error="wrong" data-success="right">Password confirmation</label>
+
+        <div class="uk-margin">
+            <input type="password" class="uk-input" name="passwordConfirmation" placeholder="Confirm your password">
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Sign-up
-            </button>
+
+        <div class="uk-margin">
+            <button class="uk-button uk-button-primary uk-lar" type="submit">Login</button>
+        </div>
     </form>
 </div>

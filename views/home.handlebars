@@ -1,29 +1,26 @@
-<nav>
-    <div class="nav-wrapper">
-        <ul id="nav" class="brand-logo">
-            <li class="active"><a href="/home">Accueil</a></li>
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="/">Accueil</a></li>
+        </ul>
+    </div>
+
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            <li class="uk-parent"><a href="/login">Login</a></li>
+            <li class="uk-parent"><a href="/register">Register</a></li>
         </ul>
     </div>
 </nav>
 
-<h1>Welcom to it's shit !</h1>
-<a href="/sign-up">Create Account</a> or <a href="/sign-in">Sign in</a>
-
-<div class="row">
-    <form action="/post" method="post">
-        <div class="input-field">
-            <div class="col s11">
-                <input id="search" type="search" name="search" placeholder="Search school/community" required>
-                <!-- class="dropdown-button" data-activates='dropdown1'  -->
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                <!-- Dropdown Structure
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">one</a></li>
-                </ul> -->
-            </div>
-            <div class="col s1">
-                <button class="btn-floating btn-large waves-effect waves-light red" name="submit"><i class="material-icons">search</i></button>
-            </div>
-        </div>
-    </form>
+<div>
+    <div class="uk-heading-small">
+        <h1>Welcome to it's shit !</h1>
+    </div>
+    <div class="uk-margin">
+        <form class="uk-search uk-search-large" action="/school" method="POST">
+            <input class="uk-input" name="search" type="search" placeholder="Search..." required>
+            <button type="submit" class="uk-search-icon-flip" uk-search-icon></button>
+        </form>
+    </div>
 </div>
