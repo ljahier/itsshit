@@ -1,38 +1,39 @@
-<nav>
-    <div class="nav-wrapper">
-        <ul id="nav" class="brand-logo center">
-            <li><a href="/home">Accueil</a></li>
-            <li class="active"><a href="#">{{ subdomain }}</a></li>
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li class="uk-parent"><a href="/home">Accueil</a></li>
         </ul>
-        <ul class="right">
-            <li><a href="#">{{username}}</a></li>
+    </div>
+
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="/">{{ subdomain }}</a></li>
         </ul>
     </div>
 </nav>
 
 <h1>Welcome on {{ subdomain }} page!</h1>
-<script type="text/javascript">
-    if ('{{messageNotInDb}}'.length >= 0) {
-        document.getElementById('messageNotInDb').style.display = 'none'
-    }
 
-</script>
-<h4 class="truncate" id="messageNotInDb">{{ messageNotInDb }}</h4>
+<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <form action="/user" method="POST">
+                <div class="uk-margin">
+                    <textarea class="uk-textarea" name="comment" placeholder="Write your message" required></textarea>
 
-<div class="row">
-    <div class="col s12">
-        <form>
-            <div class="input-field col s6">
-                <label for="textarea1">Write</label>
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
-                </button>
-            </div>
-        </form>
-        <div class="col s6">
-            <h2>{{ dbBase }}</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias harum architecto mollitia totam ea facilis libero, esse suscipit iusto praesentium modi, dolore eius temporibus explicabo est similique excepturi hic culpa.</p>
+                </div>
+
+                <div class="uk-margin">
+                    <button class="uk-button uk-button-primary uk-lar" type="submit">Write</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias harum architecto mollitia totam ea facilis
+            libero, esse suscipit iusto praesentium modi, dolore eius temporibus explicabo est similique excepturi hic
+            culpa.
         </div>
     </div>
 </div>

@@ -14,9 +14,14 @@ router.get('/', (req, res) => {
     }
 })
 
-router.post('/school', (req, res) => {
+router.get('/home', (req, res) => {
     let mydomain = req.hostname
     let subdomain = mydomain.split('.')
+    res.redirect('http://' + subdomain[1] + '.' + mydomain)
+})
+
+router.post('/school', (req, res) => {
+    let mydomain = req.hostname
     res.redirect('http://' + req.body.search + '.' + mydomain)
 })
 
